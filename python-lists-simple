@@ -1,0 +1,31 @@
+#the purpose of this simple project is to demonstrate the use of python lists
+
+#this is an old gradebook variable that I will use at the end of this project
+last_semester_gradebook = [("politics", 80), ("latin", 96), ("dance", 97), ("architecture", 65)]
+
+#here are the two lists that will be added into my gradebook list
+subjects = ["physics", "calculus", "poetry", "history"]
+grades = [98, 97, 85, 88]
+
+#let's add another class
+grades.append(100)
+subjects.append("computer science")
+
+#combine subjects and grades into a single list 
+gradebook = list(zip(subjects, grades))
+
+#let's add another class
+gradebook.append(("visual arts", 93))
+
+#let's see if it worked...
+print(list(gradebook))
+
+#let's combine that with an older list 
+full_gradebook = list(zip(gradebook, last_semester_gradebook))
+
+#...lets see how that looks
+print(list(full_gradebook))
+
+
+
+
