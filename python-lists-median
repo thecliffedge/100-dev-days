@@ -1,0 +1,61 @@
+#lets create a function for finding the median in a list 
+def middle_element(lst):
+  #lets find the length of the list
+  length = len(lst)
+  #this variable will work if the list is odd, but if it is even, this value will actually give us the first element in the second half 
+  middle = int(len(lst) / 2)
+  #this will give us the index of the last element in the first half of the list
+  below_middle = middle - 1
+  #time to get some of the elements using the indicies that we found above
+  middle_element = lst[middle]
+  below_middle_element = lst[below_middle]
+#if the length of the list has a remainder of 0, then it is even
+#return the average of the middle two elements by taking the length of the list, dividing it by two
+  if length % 2 == 0:
+  	return (middle_element + below_middle_element) / 2
+
+  else:
+  	return middle_element
+
+
+
+#test list
+print(middle_element([5, 2, -10, -4, 4, 5]))
+
+
+
+
+
+
+
+
+
+
+
+
+#some experimental code that I created to further understand lists:
+#Write your function here
+#lst1 = [5, 10, 15, 20, 25]
+
+
+#this gives us the length of the list divided by two and then rounded down to the nearest whole number:
+#middle = int(len(lst1)/2)
+#this gives us the middle index # plus 1
+#middle_plus_one = int(len(lst1)/2)+1
+#this gives you the 3rd element
+#lst1_check = lst1[2]
+#this gives you the 4th element
+#return_element = lst1[3]
+#
+#middle_element = lst1[middle]
+#middle_plus_one_element = lst1[middle_plus_one]
+#middle_avg = int((middle_element + middle_plus_one_element)/2)
+
+
+#print(middle)
+#print(middle_plus_one)
+#print(lst1_check)
+#print(return_element)
+#print(middle_element)
+#print(middle_plus_one_element)
+#print(middle_avg)
