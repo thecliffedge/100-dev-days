@@ -1,0 +1,39 @@
+#in this small project, I will demonstrate the use of loops for building lists
+
+#lets start with an empty list, we will fill this shortly
+single_digits = []
+
+#this loop will give us the digits 1-9 in the above list 
+for numbers in range(10):
+  single_digits.append(numbers)
+
+#lets create an empty list that we will fill with the squares of the elements in the single_digits list  
+squares = []
+
+#this loop will go through each element in the single_digits list and multiply it raise it to the power of two (squaring)
+for digits in single_digits:
+  squares.append(digits**2)
+
+#now, using list comprehensionm we will do the same while raising each element to the 3rd power (cubing)
+cubes = [digits**3 for digits in single_digits]
+
+
+#to prove that the above loops worked, lets print each of them out:
+print(single_digits)
+print(squares)
+print(cubes)
+
+
+#we can alse print out each element individually by creating an additional loop
+#for the single_digits list:
+for digits in single_digits:
+  print(digits)
+  
+#for the squares list:
+for digits in squares:
+  print(digits)
+  
+#for the cubes list:
+for digits in cubes:
+  print(digits)
+
