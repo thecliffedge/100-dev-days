@@ -1,83 +1,53 @@
+#in this project we will help customers find the cheapest shipping cost by building a few different functions. 
 
-
-
+#this function will help us find out how much it costs to ship a package using ground shipping.
 def ground_ship(weight):
   if weight <= 2:
-    cost = (1.50 * weight) + 20
-  elif weight >2 and weight <= 6:
-    cost = (3.00 * weight) + 20
-  elif weight >6 and weight <=10:
-    cost = (4.00 * weight) + 20
+    cost = (1.50 * weight) + 20.00
+  elif weight > 2 and weight <= 6:
+    cost = (3.00 * weight) + 20.00
+  elif weight > 6 and weight <= 10:
+    cost = (4.00 * weight) + 20.00
   else:
-    cost = (4.75 * weight) + 20
-  
+    cost = (4.75 * weight) + 20.00
+    
   return cost
 
-#print(ground_ship(8.4))
 
-premium_ground = 125
+#lets be sure to include pricing for when the customer wants to ship using premium ground
+#premium shipping does not need to be a function because the price is fixed and will not change based on weight
+premium_ship_cost = 125
 
+
+#okay, lets provide pricing if the customer chooses to have a package shipped by drone
 def drone_ship(weight):
   if weight <= 2:
     cost = (4.50 * weight)
-  elif weight >2 and weight <= 6:
+  elif weight > 2 and weight <= 6:
     cost = (9.00 * weight)
-  elif weight >6 and weight <=10:
+  elif weight > 6 and weight <= 10:
     cost = (12.00 * weight)
   else:
     cost = (14.25 * weight)
-  
+    
   return cost
 
-#print(drone_ship(1.5))
+
+#lets use the functions that we created to tell the customer which shipping method is the cheapest, as well as the pricing depending on the shipping method
+def cheapest_ship(weight):
+  ground_ship_cost = ground_ship(weight)
+  drone_ship_cost = drone_ship(weight)
+  premium_ship_cost = 125
+  if premium_ship_cost < ground_ship_cost and premium_ship_cost < drone_ship_cost:
+    print("It seems that the cheapest shipping method for you is by Premium Ground!")
+    print("Based on this shipping method, your cost will be $" + str(premium_ship_cost))
+  elif ground_ship_cost > drone_ship_cost:
+    print("It seems that the cheapest shipping method for you is by Drone!")
+    print("Based on this shipping method, your cost will be $" + str(drone_ship_cost))
+  elif ground_ship_cost < drone_ship_cost:
+    print("It seems that the cheapest shipping method for you is by Ground!")
+    print("Based on this shipping method, your cost will be $" + str(ground_ship_cost))
+    
 
 
-def print_cheapest_shipping_cost(weight):
-  
-  ground = shipping_cost_ground(weight)
-  drone = shipping_cost_drone(weight)
-  premium = shipping_cost_premium
-  
-  if ground < premium and ground < drone:
-    method = "standard ground"
-    cost = 
-  
-  
-  print(
-    "The cheapest option available is %.2f with $s shipping."
-    % (cost, method)
-  )
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  ship_by_drone = "drone shipping"
-  ship_by_ground = "ground shipping"
-  ship_premium = "premium shipping"
-  
-  if drone_ship(weight) < ground_ship(weight) and drone_ship(weight) < premium_ground:
-    best_price = drone_ship(weight)
-    print("You should ship using "+ ship_by_drone + ", it will cost "+ str(best_price)
-    
-  elif ground_ship(weight) < drone_ship(weight) and ground_ship(weight) < premium_ground:
-    best_price = ground_ship(weight)
-    print("You should ship using "+ ship_by_ground + ", it will cost "+ str(best_price)
-    
-  else:
-      best_price = ship_premium
-      print("You should ship using "+ premium_ship + ", it will cost "+ str(best_price)
-  
-  return cheapest_shipping_cost(4.8)
-  
-  
+cheapest_ship(41.5)
