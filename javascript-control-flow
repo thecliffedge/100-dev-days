@@ -1,0 +1,82 @@
+//in this project, we will create a magic 8 ball 
+//using control flow, we will be able to predict the future of a user
+
+//first, lets create a variable for the user
+let userName = "Cliff"
+
+//now, lets create a welcome message for our new user
+//if the user doesn't provide their name, we will deliver a simple: "Hello!"
+if (userName) {
+  console.log(`Hello, ${userName}!`)
+} else {
+  console.log("Hello!")
+}
+
+//we will now save the user's question to a variable
+//once the user has provided their question, we will respond with a summary message
+let userQuestion = "Will I get the big job this month?"
+console.log(`${userName} would like to know: "${userQuestion}"`)
+
+//in order for us to know which response to provide, we need to generate a random number between 1 and 8
+let randomNumber = Math.ceil((Math.random() * 8));
+
+//lets create a variable for our empty eight ball and give it an empty string that we will fill depending on the random number that we receive
+let eightBall = "";
+
+//this is where the magic happens
+
+switch(randomNumber){
+  case 1:
+    eightBall = 'It is certain';
+    break
+  case 2:
+  	eightBall = 'it is decidedly so';
+    break
+  case 3:
+  	eightBall = 'Reply hazy try again';
+    break
+  case 4:
+  	eightBall = 'Cannot predict now';
+    break
+  case 5:
+  	eightBall = 'Do not count on it';
+    break
+  case 6:
+  	eightBall = 'My sources say no';
+    break
+  case 7:
+  	eightBall = 'Outlook not so good';
+    break
+  case 8:
+  	eightBall = 'Signs point to yes';
+    break
+}
+
+//it is important to be able to solve a problem in multiple ways.
+//here we will create the same type of control flow by using if/else if/else
+//remove the comments below to use this code:
+/*
+if (randomNumber === 1) {
+  eightBall = 'It is certain';
+} else if (randomNumber === 2) {
+  eightBall = 'it is decidedly so';
+} else if (randomNumber === 3) {
+  eightBall = 'Reply hazy try again';
+} else if (randomNumber === 4) {
+  eightBall = 'Cannot predict now';
+} else if (randomNumber === 5) {
+  eightBall = 'Do not count on it';
+} else if (randomNumber === 6) {
+  eightBall = 'My sources say no';
+} else if (randomNumber === 7) {
+  eightBall = 'Outlook not so good';
+} else if (randomNumber === 8) {
+  eightBall = 'Signs point to yes';
+}
+*/
+
+
+
+//now, we need to create a message stating the answer to the user's question, depending on the Magic Eight Ball's predicton
+
+console.log(`The Magic Eight Ball says: "${eightBall}"`)
